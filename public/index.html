@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ledger AI Treasury Agent Dashboard</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Secure hardware-enforced AI treasury agent dashboard with Ledger Wallet CLI integration.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-accent">▤</span> LEDGER AGENT GATEWAY <span class="brand-accent">▤</span>
+      </div>
+      
+      <nav class="nav-links">
+        <a href="#" class="nav-link active"><span class="dot dot-orange"></span>DASHBOARD</a>
+        <a href="#" class="nav-link"><span class="dot dot-grey"></span>TRANSPORTS</a>
+        <a href="#" class="nav-link"><span class="dot dot-grey"></span>POLICIES</a>
+        <a href="#" class="nav-link"><span class="dot dot-grey"></span>AUDIT LOG</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="transport-toggle">
+          <span class="toggle-label">MODE:</span>
+          <button class="toggle-btn" id="mode-sim">SIMULATION</button>
+          <button class="toggle-btn active" id="mode-real">REAL CLI</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Body Wrapper -->
+  <main class="container">
+    
+    <!-- Breadcrumbs / Session Info -->
+    <div class="breadcrumbs">
+      GATEWAY &nbsp;/&nbsp; LEDGER SIGNERS &nbsp;/&nbsp; ACTIVE TREASURY ROOT: METAMASK_PROD
+    </div>
+
+    <!-- Treasury Assets Ledger Grid -->
+    <section class="treasury-grid">
+      <!-- Ethereum Card -->
+      <div class="asset-card brutal-border">
+        <div class="handle handle-tl"></div>
+        <div class="handle handle-tr"></div>
+        <div class="handle handle-bl"></div>
+        <div class="handle handle-br"></div>
+        <div class="asset-header">
+          <span class="badge badge-bounty">ETH</span>
+          <span class="asset-path">m/44h/60h/0h/0/0</span>
+        </div>
+        <div class="asset-details">
+          <h2 class="asset-balance">1.492 <span class="asset-unit">ETH</span></h2>
+          <span class="asset-value">~ $5,669.60 USD</span>
+        </div>
+        <div class="asset-address brutal-border-top">
+          0x71C7...976F
+        </div>
+      </div>
+
+      <!-- Solana Card -->
+      <div class="asset-card brutal-border">
+        <div class="handle handle-tl"></div>
+        <div class="handle handle-tr"></div>
+        <div class="handle handle-bl"></div>
+        <div class="handle handle-br"></div>
+        <div class="asset-header">
+          <span class="badge badge-open">SOL</span>
+          <span class="asset-path">m/44h/501h/0h/0h</span>
+        </div>
+        <div class="asset-details">
+          <h2 class="asset-balance">24.50 <span class="asset-unit">SOL</span></h2>
+          <span class="asset-value">~ $3,675.00 USD</span>
+        </div>
+        <div class="asset-address brutal-border-top">
+          7EcD...BkPm
+        </div>
+      </div>
+
+      <!-- Bitcoin Card -->
+      <div class="asset-card brutal-border">
+        <div class="handle handle-tl"></div>
+        <div class="handle handle-tr"></div>
+        <div class="handle handle-bl"></div>
+        <div class="handle handle-br"></div>
+        <div class="asset-header">
+          <span class="badge badge-level">BTC</span>
+          <span class="asset-path">m/84h/0h/0h/0/0</span>
+        </div>
+        <div class="asset-details">
+          <h2 class="asset-balance">0.042 <span class="asset-unit">BTC</span></h2>
+          <span class="asset-value">~ $3,990.00 USD</span>
+        </div>
+        <div class="asset-address brutal-border-top">
+          bc1q...9xj7
+        </div>
+      </div>
+
+      <!-- Stablecoin Card -->
+      <div class="asset-card brutal-border">
+        <div class="handle handle-tl"></div>
+        <div class="handle handle-tr"></div>
+        <div class="handle handle-bl"></div>
+        <div class="handle handle-br"></div>
+        <div class="asset-header">
+          <span class="badge badge-content">USDT</span>
+          <span class="asset-path">ERC-20 Pool</span>
+        </div>
+        <div class="asset-details">
+          <h2 class="asset-balance">250.00 <span class="asset-unit">USDT</span></h2>
+          <span class="asset-value">~ $250.00 USD</span>
+        </div>
+        <div class="asset-address brutal-border-top">
+          0x71C7...976F (USDT)
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace Column Split -->
+    <div class="content-grid">
+      
+      <!-- Left Column: Agent Control & Virtual Ledger Device -->
+      <div class="left-col">
+        <article class="card brutal-border">
+          <div class="card-header brutal-border-bottom">
+            <span class="header-tab">📂 AGENT COMMAND CENTER &amp; SIGNER GATE</span>
+            <span class="header-meta">HITL BOUNDARY: ENABLED</span>
+          </div>
+          
+          <div class="card-body">
+            
+            <!-- Interactive Playground Widget -->
+            <div class="playground-container brutal-border">
+              <div class="playground-header brutal-border-bottom">
+                <span class="header-tab">⚡ LEDGER AGENT LIVE CONTROL</span>
+                <div class="status-live"><span class="pulse-dot"></span> AGENT ACTIVE</div>
+              </div>
+
+              <div class="playground-body">
+                
+                <!-- Left half: Chat Console -->
+                <div class="console-pane">
+                  <div class="console-title">🤖 AGENT TERMINAL</div>
+                  <div class="console-log" id="console-output">
+                    <div class="log-line system-line">[SYSTEM] Secure Treasury Gateway initialized.</div>
+                    <div class="log-line system-line">[SYSTEM] Connected to Ledger Wallet CLI. Defaults set to REAL CLI.</div>
+                    <div class="log-line agent-line">Agent: Hello! I am your autonomous Treasury Agent. Type a transaction request below or click one of the quick scenarios to begin.</div>
+                  </div>
+                  
+                  <div class="quick-scenarios">
+                    <span class="quick-label">SCENARIOS:</span>
+                    <button class="quick-btn" id="scenario-genuine">Genuine Check</button>
+                    <button class="quick-btn" id="scenario-balance">Check Balances</button>
+                    <button class="quick-btn" id="scenario-send">Disburse 0.05 ETH</button>
+                    <button class="quick-btn" id="scenario-swap">Swap 0.1 ETH to USDT</button>
+                  </div>
+
+                  <div class="console-input-row brutal-border-top">
+                    <span class="console-prompt">&gt;</span>
+                    <input type="text" id="console-input" placeholder="Type command (e.g. 'Send 0.05 ETH to 0x71C7...')" autocomplete="off">
+                    <button class="btn btn-send" id="btn-submit-cmd">EXECUTE</button>
+                  </div>
+                </div>
+
+                <!-- Right half: Visual Ledger Flex Emulator -->
+                <div class="device-pane">
+                  <div class="device-title">🖳 LEDGER FLEX SCREEN</div>
+                  
+                  <div class="ledger-flex-device">
+                    <!-- Screen Container -->
+                    <div class="ledger-screen" id="device-screen">
+                      <!-- Idle screen -->
+                      <div class="screen-state" id="state-idle">
+                        <div class="flex-center">
+                          <span class="ledger-logo-huge">L</span>
+                          <div class="ledger-status-text">Ledger Flex</div>
+                          <div class="ledger-sub-text">Ready &amp; Secure</div>
+                        </div>
+                      </div>
+
+                      <!-- Genuine Check Success -->
+                      <div class="screen-state hidden" id="state-genuine-success">
+                        <div class="flex-center">
+                          <span class="status-icon success-icon">✔</span>
+                          <div class="ledger-status-text">Genuine Check</div>
+                          <div class="ledger-sub-text">Passed Authenticity</div>
+                        </div>
+                      </div>
+
+                      <!-- Balances Screen -->
+                      <div class="screen-state hidden" id="state-balances">
+                        <div class="balances-screen-layout">
+                          <div class="ledger-screen-title">🔒 Ethereum Balances</div>
+                          <div class="balance-item">
+                            <span class="asset-ticker">ETH</span>
+                            <span class="asset-amount">1.4920</span>
+                          </div>
+                          <div class="balance-item">
+                            <span class="asset-ticker">USDT</span>
+                            <span class="asset-amount">250.00</span>
+                          </div>
+                          <div class="ledger-screen-footer">Device Idle</div>
+                        </div>
+                      </div>
+
+                      <!-- Review Transaction / Swap Screen -->
+                      <div class="screen-state hidden" id="state-signing">
+                        <div class="signing-screen-layout">
+                          <div class="ledger-screen-title" id="sign-title">Review Transaction</div>
+                          
+                          <div class="tx-field">
+                            <div class="field-label">Amount</div>
+                            <div class="field-value" id="sign-amount">0.05 ETH</div>
+                          </div>
+                          
+                          <div class="tx-field">
+                            <div class="field-label">To Address</div>
+                            <div class="field-value address-value" id="sign-address">0x71C7...976F</div>
+                          </div>
+
+                          <div class="tx-field">
+                            <div class="field-label">Max Fees</div>
+                            <div class="field-value" id="sign-fees">0.000312 ETH</div>
+                          </div>
+
+                          <div class="tx-actions">
+                            <button class="ledger-btn ledger-btn-reject" id="btn-device-reject">Reject</button>
+                            <button class="ledger-btn ledger-btn-approve" id="btn-device-approve">Approve</button>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Success / Finished screen -->
+                      <div class="screen-state hidden" id="state-signed">
+                        <div class="flex-center">
+                          <span class="status-icon success-icon">✔</span>
+                          <div class="ledger-status-text">Signed &amp; Approved</div>
+                          <div class="ledger-sub-text">Broadcasting transaction...</div>
+                        </div>
+                      </div>
+
+                      <!-- Rejected screen -->
+                      <div class="screen-state hidden" id="state-rejected">
+                        <div class="flex-center">
+                          <span class="status-icon error-icon">✖</span>
+                          <div class="ledger-status-text">Rejected</div>
+                          <div class="ledger-sub-text">Operation Cancelled</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <h3 class="subsection-title">Hardware-Enforced Agent Security Model</h3>
+            <p class="paragraph">
+              This dashboard acts as an interface layer. While the AI agent possesses the intelligence to monitor assets, calculate trade parameters, and generate payloads, it lacks the cryptographic authority to execute them. By decoupling the transaction preparation (handled by the agent CLI) from key custody (held within the Ledger Secure element), we ensure that a compromised agent cannot pivot, exceed treasury parameters, or fall victim to prompt injections without triggering a physical review on the device screen.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right Column: Security checklist & Audit Log Table -->
+      <aside class="right-col">
+        
+        <!-- Compliance Checklist -->
+        <div class="card brutal-border sidebar-widget">
+          <div class="handle handle-tl"></div>
+          <div class="handle handle-tr"></div>
+          <div class="handle handle-bl"></div>
+          <div class="handle handle-br"></div>
+          <div class="widget-header brutal-border-bottom">
+            🛡 SECURE POLICY AUDIT
+          </div>
+          <div class="widget-body">
+            <div class="widget-stats-list">
+              <div class="widget-stat-item">
+                <span class="lbl">🔒 HARDWARE ROOT TRUST</span>
+                <span class="val success-text">ACTIVE</span>
+              </div>
+              <div class="widget-stat-item">
+                <span class="lbl">✔ GENUINE CHECK</span>
+                <span class="val success-text">PASSED</span>
+              </div>
+              <div class="widget-stat-item">
+                <span class="lbl">🛡 HITL CONFIRM BOUNDARY</span>
+                <span class="val success-text">ENFORCED</span>
+              </div>
+              <div class="widget-stat-item">
+                <span class="lbl">⚙ ACTIVE TRANSPORT</span>
+                <span class="val" id="active-transport-label">REAL (CLI/PROXY)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audit Log Table -->
+        <div class="card brutal-border sidebar-widget">
+          <div class="widget-header brutal-border-bottom">
+            📋 TRANSACTION AUDIT LOG
+          </div>
+          <div class="widget-body log-widget-body">
+            <div class="table-container">
+              <table class="audit-table" id="audit-table">
+                <thead>
+                  <tr>
+                    <th>ACTION</th>
+                    <th>AMOUNT</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>DISBURSE (ETH)</td>
+                    <td>0.01 ETH</td>
+                    <td><span class="log-status approved">✔ SIGNED</span></td>
+                  </tr>
+                  <tr>
+                    <td>SWAP ETH-USDT</td>
+                    <td>0.05 ETH</td>
+                    <td><span class="log-status approved">✔ SIGNED</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">☰ LEDGER SECURE AGENTIC GATEWAY v1.0.0 ☰</div>
+      <div class="footer-copy">&copy; 2026 Student Builder Challenge. Powered by Ledger N3XT.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

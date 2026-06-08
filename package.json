@@ -1,0 +1,24 @@
+{
+  "name": "ledger-agent-challenge",
+  "version": "1.0.0",
+  "description": "Ledger Agent Stack Bounty Clone - AI Treasury Agent with college.xyz UI",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "keywords": [
+    "ledger",
+    "agent-stack",
+    "ai-agent",
+    "brutalist",
+    "treasury-bot"
+  ],
+  "author": "Student Builder",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
